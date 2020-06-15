@@ -1,0 +1,27 @@
+// Bootstrap
+$icon-font-path: "../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+$primary: #4d5052;
+$textPrimary: #c6d3d3;
+
+html, body {
+  background: $primary;
+  color: $textPrimary;
+}
+
+.hidden {
+  display: none;
+}
+
+#drop-zone {
+  border: 2px dashed #bbb;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  color: #bbb;
+  margin: 20px 0px;
+}

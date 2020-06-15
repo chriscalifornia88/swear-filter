@@ -1,0 +1,10 @@
+ffmpeg -i input -vcodec copy -acodec aac -strict -2 output.mkv{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.0.0",
+    "video.js": "^4.12.10"
+  }
+}

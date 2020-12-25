@@ -35,7 +35,7 @@ var Swear;
             URL.revokeObjectURL(objectUrl);
         };
         App.prototype.displayCommand = function (timestamps) {
-            var command = 'ffmpeg -af "';
+            var command = 'ffmpeg -i [INPUT] -af "';
             var volumeChanges = [];
             for (var i = 0; i < timestamps.length; i++) {
                 var timestamp = timestamps[i];
@@ -44,7 +44,7 @@ var Swear;
                 // Mute audio if we are within 1 second of the timestamp
                 volumeChanges.push("volume=enable='between(t," + start.time + "," + (end.time + 1) + ")':volume=0");
             }
-            command += volumeChanges.join(',') + '" -i [INPUT] -vf subtitles=[SWEAR-SRT] [OUTPUT]';
+            command += volumeChanges.join(',') + '" -vf subtitles=[SWEAR-SRT] [OUTPUT]';
             document.getElementById("command-results").style.display = "block";
             var t = document.getElementById('command');
             t.innerText = command;
@@ -158,14 +158,14 @@ var Swear;
             get: function () {
                 return this._content;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(Subtitles.prototype, "timestamps", {
             get: function () {
                 return this._timestamps;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         return Subtitles;
@@ -222,14 +222,14 @@ var Swear;
             get: function () {
                 return this._video;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(FileSelector.prototype, "subtitles", {
             get: function () {
                 return this._subtitles;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         FileSelector.allowedVideoExtensions = ['mp4', 'mkv'];
@@ -257,28 +257,28 @@ var Swear;
             get: function () {
                 return this._hours;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(Timestamp.prototype, "minutes", {
             get: function () {
                 return this._minutes;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(Timestamp.prototype, "seconds", {
             get: function () {
                 return this._seconds;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(Timestamp.prototype, "time", {
             get: function () {
                 return this._time;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         return Timestamp;

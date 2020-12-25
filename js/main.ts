@@ -51,7 +51,7 @@ module Swear {
         }
 
         private displayCommand(timestamps: any[]): void {
-            let command: string = 'ffmpeg -af "';
+            let command: string = 'ffmpeg -i [INPUT] -af "';
 
             let volumeChanges: string[] = [];
 
@@ -63,7 +63,7 @@ module Swear {
                 // Mute audio if we are within 1 second of the timestamp
                 volumeChanges.push("volume=enable='between(t," + start.time + "," + (end.time + 1) + ")':volume=0");
             }
-            command += volumeChanges.join(',') + '" -i [INPUT] -vf subtitles=[SWEAR-SRT] [OUTPUT]';
+            command += volumeChanges.join(',') + '" -vf subtitles=[SWEAR-SRT] [OUTPUT]';
 
             document.getElementById("command-results").style.display = "block";
             const t: HTMLTextAreaElement = document.getElementById('command') as HTMLTextAreaElement;

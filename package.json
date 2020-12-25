@@ -1,4 +1,4 @@
-ffmpeg -i input -vcodec copy -acodec aac -strict -2 output.mkv{
+{
   "private": true,
   "devDependencies": {
     "gulp": "^3.8.8"
